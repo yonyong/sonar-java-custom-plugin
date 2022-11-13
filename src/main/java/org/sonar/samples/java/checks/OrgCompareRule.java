@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
-@Rule(key = "StoreCodeCompareRule")
+@Rule(key = "OrgCompareRule")
 public class OrgCompareRule extends IssuableSubscriptionVisitor {
 
   @Override
@@ -39,8 +39,8 @@ public class OrgCompareRule extends IssuableSubscriptionVisitor {
   protected void onMethodInvocationFound(MethodInvocationTree tree) {
     final Arguments arguments = tree.arguments();
     final Iterator<ExpressionTree> iterator = arguments.iterator();
-    boolean isStoreCode = false;
-    boolean storeCheckPass = false;
+    boolean isOrgCode = false;
+    boolean orgCheckPass = false;
     while (iterator.hasNext()) {
       final ExpressionTree next = iterator.next();
       if (!(next instanceof MethodInvocationTree)) {
@@ -48,16 +48,16 @@ public class OrgCompareRule extends IssuableSubscriptionVisitor {
       }
       final IdentifierTree identifierTree = methodName((MethodInvocationTree) next);
       final String syntaxTokenStr = identifierTree.name().toLowerCase();
-      if (syntaxTokenStr.contains("storecode")) {
-        isStoreCode = true;
+      if (syntaxTokenStr.contains("orgcode")) {
+        isOrgCode = true;
       }
-      if (isStoreCode && syntaxTokenStr.contains("trim")) {
-        storeCheckPass = true;
+      if (isOrgCode && syntaxTokenStr.contains("trim")) {
+        orgCheckPass = true;
       }
     }
 
-    if (isStoreCode && !storeCheckPass) {
-      reportIssue(tree, "年輕人，你trim()了嗎");
+    if (isOrgCode && !orgCheckPass) {
+      reportIssue(tree, "亲爱的，你trim()了吗");
     }
   }
 
