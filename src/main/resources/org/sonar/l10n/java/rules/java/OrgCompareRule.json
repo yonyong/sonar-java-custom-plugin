@@ -1,0 +1,11 @@
+{
+  "title": "组织code比较用trim方法",
+  "type": "Bug",
+  "status": "ready",
+  "tags": [
+    "bugs",
+    "gandalf",
+    "magic"
+  ],
+  "defaultSeverity": "Critical"
+}

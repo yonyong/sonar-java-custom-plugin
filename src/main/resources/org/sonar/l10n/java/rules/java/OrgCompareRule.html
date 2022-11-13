@@ -1,0 +1,19 @@
+<p>年轻人，你trim()了吗 </p>
+
+<h2>orgCode比较用trim方法</h2>
+<pre>
+class MyClass {
+    boolean NonCompliantEquals(OrgInfo orgInfo){ // Noncompliant
+        return "NJ001".equals(orgInfo.getOrgCode());
+    }
+}
+</pre>
+
+<h2>Compliant Solution</h2>
+<pre>
+class MyClass {
+    boolean CompliantEquals(OrgInfo orgInfo){ // Compliant
+        return "NJ001".equals(orgInfo.getOrgCode().trim());
+    }
+}
+</pre>

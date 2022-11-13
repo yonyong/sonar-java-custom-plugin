@@ -1,0 +1,30 @@
+# Java compile file
+*.class
+
+
+# Intellij IDEA
+.idea
+*.iml
+target/
+target/*
+out/
+out/*
+logs
+logs/*
+*.log
+
+*/*.iml
+*/target/
+*/target/*
+
+
+# eclipse 
+.classpath
+.settings
+
+# mvn config
+mvnw
+mvnw.cmd
+.mvn/
+
+.vscode
