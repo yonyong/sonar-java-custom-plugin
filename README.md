@@ -1,17 +1,19 @@
-SonarQube Java Custom Rules Plugin Template
-=======
+*_[EN](https://github.com/yonyong/sonar-java-custom-plugin/blob/master/README_EN.md) | 中文_*
+# 如何构建
+```$xslt
+1. 配置好项目结构(重要)
 
-This example demonstrates how to write **Custom Rules** for SonarJava.
+2. mvn clean install
 
-If you are using SonarQube 8.9 LTS (latest release), use the following command to build it without any dependency to the current project status:
+3. 将jar包移动至sonar插件目录下(extensions/plugins/)
 
+4. 重启sonar
 ```
-mvn clean install -f pom_SQ_8_9_LTS.xml
+
+# 如何自定义一个规则
+```$xslt
+1. 新增一个自定义规则类 org.sonar.samples.java.checks.MyFirstCustomCheck，编写相应逻辑
+2. 在org.sonar.samples.java.RulesList类中注册自定义规则类
+3. 在resources/org.sonar.l10n.java.rules.java下新建一个同名的html文件(具体可参考 MyFirstCustomCheck.html)
+4. 在resources/org.sonar.l10n.java.rules.java下新建一个同名的json文件(具体可参考 MyFirstCustomCheck.json)
 ```
-
-For more details about how to write custom rules, please refer to the official tutorial, [Writing Custom Java Rules 101](../CUSTOM_RULES_101.md).
-
-### License
-
-The [GNU LGPL 3.0](https://www.gnu.org/licenses/lgpl.txt) license of this GitHub repository does not apply in the `java-custom-rules-example` directory.
-All contents under the `java-custom-rules-example` directory are licensed under the more permissive [MIT No Attribution](LICENSE.txt) license.

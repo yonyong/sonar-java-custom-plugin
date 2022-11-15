@@ -1,3 +1,4 @@
+*_EN | [中文](https://github.com/yonyong/sonar-java-custom-plugin/blob/master/README.md)_*
 # how to build
 ```$xslt
 1. manage project module
