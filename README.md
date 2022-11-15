@@ -1,4 +1,6 @@
 *_[EN](https://github.com/yonyong/sonar-java-custom-plugin/blob/master/README_EN.md) | 中文_*
+# 介绍
+基于sonar官方提供方式实现自定义sonar插件
 # 如何构建
 ```$xslt
 1. 配置好项目结构(重要)
